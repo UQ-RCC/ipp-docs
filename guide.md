@@ -28,7 +28,7 @@ IPP supports 4 types of filter
 
 The file converter currently only supports the conversion of .ims files into .tif files. With plans to increase this to other input file types in the future.
 
-###.ims to .tif
+### .ims to .tif
 The .ims to .tif file converter expects large multi-dimensional (3D time-series) .ims files (either from an Andor Dragonfly Spinning Disc Confocal or from the Imaris Visualisation program) and will output individual timepoints as a .tif file.
 
 
