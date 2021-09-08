@@ -1,9 +1,6 @@
-Welcome to the Image Processing Portal, 
+The Image Processing Portal (IPP) is designed around the needs of optical microscopists to manage, convert, pre-process and deconvolve datasets on the Wiener High Performance Cluster in an easy to use way.
 
-Commissioned by IMB Microscopy and jointly developed with UQ RCC.  
- 
-
-The Portal is designed around the needs of optical microscopists to manage, convert, pre-process and deconvolve datasets on the Wiener High Performance Cluster.  
+The IPP uses a number of different UQ systems which you may not have access to by default. The following steps and links outline the required process to getting a full functional account on all required systems.
 
 # Requirements 
 
@@ -11,7 +8,7 @@ The Portal is designed around the needs of optical microscopists to manage, conv
 
 1. Have a UQ staff account with DUO MFA activated.
 2. Ensure you have access to the UQ VPN - [Link](https://my.uq.edu.au/information-and-services/information-technology/working-remotely/vpn-virtual-private-network) 
-3. Create (or have) a UQ RDM Q collection/s to store your input and output datasets - Link 
+3. Create (or have) a [UQ RDM](https://research.uq.edu.au/rmbt/uqrdm) Q collection/s to store your input and output datasets - [Link](https://rdm.uq.edu.au/)
 
     *When you create the collection/s, ensure you tick the "The project data needs to be mounted on UQ HPC facilities" tick box in the Data storage options section at the bottom of the webpage. This will create a "Q" collection that is mountable on the Wiener HPC.* 
 
@@ -36,4 +33,8 @@ The Portal is designed around the needs of optical microscopists to manage, conv
 
      *When requesting your RDM to be mounted on an institutional cache please provide the Shortcode + the "Q" code for example: MicroRDM-Q1234*
 
-
+### Policies
+The IPP uses a number of different UQ systems which have their own sets of rules/policies which you must agree to and follow.
+- Wiener HPC User Guide [Link](http://www2.rcc.uq.edu.au/hpc/guides/index.html?secure/Wiener_userguide.html)
+- Research Data Manager Guide [Link](https://guides.library.uq.edu.au/for-researchers/uq-research-data-manager)
+- Characterisation Virtual Laboratory Guide [Link](https://characterisation-virtual-laboratory.github.io/CVL_Community/CVLWiener/)
