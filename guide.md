@@ -70,6 +70,32 @@ The .ims to .tif file converter expects large multi-dimensional (3D time-series)
 
 
 ## Preprocessing
+Currently in beta this page can be used to distil PSFs or perform Lattice Light-sheet specific deskewing (without deconvolution).
+<br>
+
+### Deskewing (For LLS)
+Images generated on a Lattice Light-sheet microscope using sample scan mode will require deskewing. This step 'pads' out each slice of the image volume in order to re-orientate the image volume when viewed in image viewing software. Note if the image volume is to be deconvolved, the IPP incorporates a deskewing step within the "Light-sheet" mode in the deconvolution tab.
+
+<img src="images/PreProcessing_Deskew.png" alt="Overview of Deskewing Steps" width="900"/><br>
+The Image above outlines the steps involved in deskewing image files within the PreProcessing page of the IPP. Note all sections relevant to the deskewing process have been highlighted yellow.
+
+1. Using the Files section on the left of the page to pre-load files you wish to process
+* Single files can be chosen using the "Add Single Files" button
+* Multiple files can be chosen using the "Add Series" button (note you can use the Search bar to refine images within a directory; eg *contains* 'ch1')
+2. Ensure Deskew and Keep Deskewed Files toggles are enabled
+3. Ensure the correct objective angle (32.8 for 3i LLS systems) and background intensity is chosen. (Note either the chosen single file or a random file from the Add Series load is opened is queried for its background intensity automatically).
+4. Ensure the correct pixel size metadata is displayed (for LLS it should be 0.104nm X/Y and the chosen Z-step size during acquisition).
+5. Ensure the correct output directory is chosen (by default it is nested within the input file(s) directory with the name "preprocessing_output"
+6. Submit the job to run (if you wish to recieve an email on job completion ensure the checkbox is ticked)
+<br>
+Note: IMB Microscopy is aware of a bug in the SButility program used to chop up .sld files into individual .tif stacks whereby the image scale is set to inches. This is being fixed inconjunction with the update of Slidebook 2021.
+In order to edit incorrectly read image size metadata click on the pencil icon which will open the following popup window
+<img src="images/PreProcessing_Deskew_editMetadata.png" alt="Edit Image Metadata Voxel Size Popup" width="500"/><br>
+Ensure the correct units are chosen and the X & Y pixel sizes are set (For LLS this is 104nm) and the Z-step size matches the Zstep size of the acquisition (usually 495nm).
+                                                                                         
+### PSF Distillation
+Documentation Comming Soon
+
 
 ## Deconvolution
 
