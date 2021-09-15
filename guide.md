@@ -62,7 +62,7 @@ The Characterisation Virtual Laboratory (CVL) platform is an Linux based virtual
 Selecting the file from within the Files Manger page will allow you to then click the Launch Virtual Desktop button in the top right toolbar. Here you can spin up a CVL instance and launch the selected image file into either Napari or Fiji. Note you can edit the resources allocated to your CVL session upto a limit of (1xNode, 4xProcessors(cores), 32GB Memory (per processor)).
 
 ## Desktops Manager
-The desktops manager page lets you create a CVL desktop environment, or if you already have one available you can click Show Desktop to create a new tab with the CVL session running. You can also kill a desktop session by clicking the trash can icon.
+The desktops manager page lets you create a CVL desktop environment, or if you already have one available you can click Show Desktop to create a new tab with the CVL session running. You can also kill a desktop session by clicking the trash can icon.<br>
  <img src="images/Desktops Manager_CreateDesktop.png" alt="Overview of Desktops Manager Page - No Currently Running Dekstop" width="900"/><br>
  <img src="images/Desktops Manager_DesktopRunning.png" alt="Overview of Desktops Manager Page - Currently Running Dekstop" width="900"/><br>
 
