@@ -38,7 +38,7 @@ IPP supports 4 types of filter
     <li><b>Contains</b> Files Manager displays any folder/file that contains the given search text</li>
     <li><b>StartsWith</b> Files Manager displays any folder/file that starts with the given search text</li>
     <li><b>EndsWith</b> Files Manager displays any folder/file that ends with the given search text</li>
-    <li><b>Custom</b> Files Manager displays any folder/file that matches the [glob filter](https://facelessuser.github.io/wcmatch/glob/) specified in the given search text</li>
+    <li><b>Custom</b> Files Manager displays any folder/file that matches the glob filter specified in the given search text. See [here](https://facelessuser.github.io/wcmatch/glob/) for more information. </li>
 </ul>
 
 <br>
@@ -60,6 +60,12 @@ There are 3 Directory Groups:
 The Characterisation Virtual Laboratory (CVL) platform is an Linux based virtual dekstop that can be run within your browser, populated with open-source software tools such as Fiji and Napari. For more information on how to access CVL please see the following [Guide](https://characterisation-virtual-laboratory.github.io/CVL_Community/CVLWiener/)
 
 Selecting the file from within the Files Manger page will allow you to then click the Launch Virtual Desktop button in the top right toolbar. Here you can spin up a CVL instance and launch the selected image file into either Napari or Fiji. Note you can edit the resources allocated to your CVL session upto a limit of (1xNode, 4xProcessors(cores), 32GB Memory (per processor)).
+
+## Desktops Manager
+The desktops manager page lets you create a CVL desktop environment, or if you already have one available you can click Show Desktop to create a new tab with the CVL session running. You can also kill a desktop session by clicking the trash can icon.
+ <img src="images/Desktops Manager_CreateDesktop.png" alt="Overview of Desktops Manager Page - No Currently Running Dekstop" width="900"/><br>
+ <img src="images/Desktops Manager_DesktopRunning.png" alt="Overview of Desktops Manager Page - Currently Running Dekstop" width="900"/><br>
+
 
 ## Converter
 
@@ -98,5 +104,64 @@ Documentation Comming Soon
 
 
 ## Deconvolution
+Image deconvolution is a computationally intensive task which can improve image contrast and resolution. More information on deconvolution can be found [here.](https://imb.uq.edu.au/research/facilities/microscopy/training-manuals/microscopy-online-resources/image-analysis/image-deconvolution)<br>
+
+### Configuring a deconvolution Job on the IPP
+
+1) Select the illumination type at the top of the deconvolution page by choosing one of the following from the dropdown
+   - Light Sheet
+   - Widefield
+   - Confocal
+   - 2photon
+2) Add files using the Files section on the left of the page to pre-load files you wish to process
+   - Single files can be chosen using the "Add Single Files" button
+   - Multiple files can be chosen using the "Add Series" button (note you can use the Search bar to refine images within a directory; eg *contains* 'ch1')
+3) Follow the wizard steps on the right hand side of the page, by completing the page and clicking the forward arrow (4). <br>
+ <img src="images/Deconvolution_Widefield_Metadata.png" alt="Overview of Deconvolution - Widefield - Metadata" width="900"/><br>
+
+    - **Metadata** 
+        - Ensure the metadata has been read from the file correctly and edit if required. 
+        - Note some files import Z & T dimensions back to front, use the Swap Z and T dimmensions toggle if required. 
+        - Ensure the output directory base path and folder name are correct.
+    - **PSF** 
+        - Choose either to load a measured PSF file or to Generate PSF. (note a measured PSF is always better)
+            - *Generating a PSF*
+                - Choose the PSF model to use (Scalar or Vector)
+                    - Note: The vectorial model is more accurate than the scalar model, particularly with high NA objectives, and is thus recommended for most circumstances. In addition to the objective’s NA and refractive index, the vectorial model requires knowledge of the sample’s refractive index. The scalar model does not include the sample RI as a parameter, and thus cannot account for any refractive index mismatches.
+                - Ensure the Objective NA and Objective immersion refrative index are correct
+                - If using Vectorial ensure the correct Sample medium refractive index is chosen (this can be entered manually or from the drop-donw on the right.
+            - *Using a measured PSF*
+                - Click the magnifying glass to seach for your PSF file (note it must have the same channel order and number of channels as the file its to be used on)
+                - Ensure the metadata for the PSF file is loaded correctly and edit if required.
+    - **Iterations**
+        - Choose the number of iterations of deconvolution for each channel (use -1 to let microvolution determine the cut off)
+        - Ensure the emission wavelength is correct (for example eGFP would be approximately 525nm, not 488nm)
+        - Choose a background correction
+            - Note: This parameter should be set if a dark “ring” appears around regions of bright fluorescence after deconvolution. When choosing a percentage background (see options in list below), the software automatically chooses the selected percentile of the entire image. When ‘Manual’ is selected, a new text box appears where a precise background level can be specified. Note that if the background level is set too high, low intensity signals may be suppressed or disappear.
+    - **Noise Suppression**
+        - Regularisation will suppress amplification of noise and ring artefacts. Entropy is the more advanced algorithm and is recommended.
+        - Filtering pre/post can suppress high frequency noise being amplified. Most users won’t need these tools.
+    -  **Advanced**
+        - Choose whether to use Blind deconvolution
+        - Padding + Tiling is used for when you need to chop up your data (very large tile scans or z-stacks the won’t fit in the GPU memory)
+        - Output image type can be 32-bit or same as input
+    - **Devices**
+        - Choose how many nodes you would like to request (Upto 10 nodes can be requested)
+        - Choose the ammount of memory required per job (in GBs), note the portal estimates how much you will need (you can request up to 384GB)
+        - Choose the number of GPUs per job (you can choose up to 4, however you may be queued for multiple days waiting for a single node with 4 GPUs to be made available to you, IMB Microscopy recommends 1 GPU per job for your job to begin as quick as possible).
+    - **Review**
+        - Check your settings from each tab and submit your job by clicking Submit Selected (single file/series) or Submit All if you have multiple single files or series loaded.
+    - **Templates**
+        - Currently in beta, your settings can be saved as a template and reloaded for faster job submission in the future.     
+    
+    <br><br>
+    - **Deconvolution with Lattice - Light-sheet files**
+        - Note when entering the metadata for the LLS files, it needs to be post deskew (eg for 0.495 Z-steps, this would be 0.268 post deskew but pre deconvolution)
+        - When in Light-sheet illumination mode, an extra tab is included in the wizard for deskewing.
+            - Ensure the toggle Deskew is on
+            - Keep Deskewed files can be left off (unless you wish to keep the files)
+            - Ensure the Objective Angle is set correctly (32.8) and the median background is reasonable.
+            - Ensure the voxel sizes are correct and edit if necessary (for LLS it should be 0.104 for X/Y and usually 0.495 for Voxel depth)  
+ 
 
 ## Jobs Management
