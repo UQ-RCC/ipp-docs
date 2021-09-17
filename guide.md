@@ -165,3 +165,20 @@ Image deconvolution is a computationally intensive task which can improve image 
  
 
 ## Jobs Management
+When a job is submitted to the HPC it first enters the Queue which is managed by a schedular called SLURM. SLURM looks for where it can slot your job into the HPC based on your requested resources. Sometimes your job may run instantly (if you only request a small allocation of resources) however sometimes it may hit the queue and need to wait until enough requested resources are freed up and reserved for your job. The Jobs page lets you see all jobs that you have requested that are currently in the queue or running. The page refreshes every few seconds, or you can manually refresh by clicking the blue icon. Jobs can also be cancelled by selecting the appropriate checkbox that corresponds with the job being cancelled and by clicking the orange button. <br>
+<img src="images/Jobs_running.png" alt="Overview of Jobs page" width="900"/><br>
+
+Common Status Codes given by SLURM on the Jobs page will include:
+| Status   	| Explanation   	|
+|---	|---	|
+| Running  	| The current job is allocated to a node and is running   	|
+| Completed | The job has completed successfully    |
+| Completing  | The job is finishing but some processes are still active    |
+| Resources  	| The job is waiting for resources to become available  	|
+| QOSMaxMemoryPerUser  	| |
+|   	|   	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+
