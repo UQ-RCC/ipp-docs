@@ -1,5 +1,18 @@
 # User Guide
 
+The Image Processing Portal (IPP) is a tool for researchers to easily navigate, process, deconvolve and visualise their data-set via a website GUI. The goal of the IPP is to make High Performance Computing (HPC) more accessible to researchers from a non-computer science background.
+
+This user guide has been prepared to help submit jobs via the Image Processing Portal. Please note that the IPP is still udnergoing development with the goal of quarterly releases. 
+
+The IPP is accessible to UQ staff account holders with access to Weiner HPC following a request to [IMB Microscopy Staff](mailto:microscopes@imb.uq.edu.au)
+
+The IPP works best in Mozilla FireFox browser with known issues in Google Chrome and Apple's Safari Browser.
+
+If at anytime during your usage of the IPP you encounter a bug, or wish to submit a feature request or provide feedback you can click the Feedback Icon (<img src="images/Feedback_Icon.png" alt="Feedback Icon" width="25"/>) in the top right of the title bar, which will automatically be sent through to the development team. You will also have the option to attach a screenshot to the report.
+
+
+Tools are currently divided into the following categories:
+
 ## Files Manager
 ![image](images/FilesManager_V3.png)
 
@@ -168,17 +181,18 @@ Image deconvolution is a computationally intensive task which can improve image 
 When a job is submitted to the HPC it first enters the Queue which is managed by a schedular called SLURM. SLURM looks for where it can slot your job into the HPC based on your requested resources. Sometimes your job may run instantly (if you only request a small allocation of resources) however sometimes it may hit the queue and need to wait until enough requested resources are freed up and reserved for your job. The Jobs page lets you see all jobs that you have requested that are currently in the queue or running. The page refreshes every few seconds, or you can manually refresh by clicking the blue icon. Jobs can also be cancelled by selecting the appropriate checkbox that corresponds with the job being cancelled and by clicking the orange button. <br>
 <img src="images/Jobs_running.png" alt="Overview of Jobs page" width="900"/><br>
 
+Note that any job running on Wiener against your UQ username will be visible in this list. Jobs submitted via the Image Processing Portal will be prefixed with ipp_ . Characterisation Virtual Laboratories (Linux virtual desktops) will have the *Jobname* cvl and are currently limited to 1 cvl session per user.
+
 Common Status Codes given by SLURM on the Jobs page will include:
-| Status   	| Explanation   	|
+| **Status**   	| **Explanation**   	|
 |---	|---	|
 | Running  	| The current job is allocated to a node and is running   	|
 | Completed | The job has completed successfully    |
 | Completing  | The job is finishing but some processes are still active    |
-| Resources  	| The job is waiting for resources to become available  	|
-| QOSMaxMemoryPerUser  	| |
-|   	|   	|
-|   	|   	|
-|   	|   	|
-|   	|   	|
-|   	|   	|
+| Failed    | The job terminated with a non-zero exit code and failed to execute  |
+| Pending   | The job is waiting for resource allocation. It will eventually run  |
+| Resources | The job is waiting for resources to become available  	|
+| QOSMaxMemoryPerUser  	| The amount of requested memory has exceeded your user limit. The job may run if other running jobs finish |
+| QOSMaxCpuPerUser  	| The amount of requested CPUs has exceed your user limit. The job may run if other running jobs finish |
 
+<br><br> For more information on SLURM error codes see the full documentation [here](https://slurm.schedmd.com/squeue.html#lbAG)
