@@ -2,7 +2,7 @@
 
 The IPP is a Web page for biologists to interact with High Performance Compute (HPC) systems at The University of Queensland.
 
-The IPP is designed, funded and developed by the IMB Microscopy Facility & the Research Computing Centre (RCC)
+The IPP is designed, funded and developed by the [IMB Microscopy Facility](https://imb.uq.edu.au/microscopy) & the [Research Computing Centre (RCC)](https://rcc.uq.edu.au/)
 
 # Why portal? 
 
@@ -23,3 +23,6 @@ Currently the IPP has the following pipelines enabled:
 * **Job List:** Shows currently running jobs by the user by querying the SLURM queue
 
 
+You can provide feedback (bug report, feature request, etc) by clicking on the feedback button next to your email address at the top right corner of this page.
+
+Firefox is the recommended browser for this Image Processing Portal.
