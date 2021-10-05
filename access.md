@@ -7,8 +7,7 @@ The IPP uses a number of different UQ systems which you may not have access to b
 ### Mandatory: 
 
 1. Have a UQ staff account with DUO MFA activated.
-2. Ensure you have access to the UQ VPN - [Link](https://my.uq.edu.au/information-and-services/information-technology/working-remotely/vpn-virtual-private-network) 
-3. Create (or have) a [UQ RDM](https://research.uq.edu.au/rmbt/uqrdm) Q collection/s to store your input and output datasets - [Link](https://rdm.uq.edu.au/)
+2. Create (or have) a [UQ RDM](https://research.uq.edu.au/rmbt/uqrdm) Q collection/s to store your input and output datasets - [Link](https://rdm.uq.edu.au/)
 
     *When you create the collection/s, ensure you tick the "The project data needs to be mounted on UQ HPC facilities" tick box in the Data storage options section at the bottom of the webpage. This will create a "Q" collection that is mountable on the Wiener HPC.* 
 
