@@ -15,10 +15,11 @@ The IPP utilises the Wiener GPU-accelerated HPC system to make use of massively 
 
 Currently the IPP has the following pipelines enabled:
 
-* File Management: The ability to explore, copy/paste, and delete files interactively from within the browser, allowing files to be moved between collections, or organised on native HPC infrastructure, without having to bring the files locally to the users device.
-* Converter: File conversion between the .ims (Imaris/Fusion) filetype and .tiff individual Z-stacks for accelerated ingest into Wiener. Coming soon .sld (Slidebook) will be implemented as a parallel processed for SButility (also developed by RCC).
-PreProcessing: Batch processing and deskewing of Lattice Light-Sheet data-sets, as well as PSF distillation (bead centring & averaging).
-* Deconvolution: Currently utilising Microvolution Deconvolution (with Light-Sheet, Widefield, Confocal and 2-Photon modalities supported) for either individual files or directories of files. This mode also supports Generating a PSF or suppling your own measured PSF files. Deconvolution is currently supported on up to 10 nodes simultaneously utilising up to 40 GPUs.
-* Job List: Shows currently running jobs by the user by querying the SLURM queue
+* **File Management:** The ability to explore, copy/paste, and delete files interactively from within the browser, allowing files to be moved between collections, or organised on native HPC infrastructure, without having to bring the files locally to the users device.
+* **Desktops Manager:** The ability to spin up one of 3 different flavours of Linux virtual desktop (running CVL) to launch files into from the file browser.
+* **Converter:** File conversion between the .ims (Imaris/Fusion) filetype and .tiff individual Z-stacks for accelerated ingest into Wiener. Coming soon .sld (Slidebook) will be implemented as a parallel processed for SButility (also developed by RCC).
+* **PreProcessing:** Batch processing and deskewing of Lattice Light-Sheet data-sets, as well as PSF distillation (bead centring & averaging).
+* **Deconvolution:** Currently utilising Microvolution Deconvolution (with Light-Sheet, Widefield, Confocal and 2-Photon modalities supported) for either individual files or directories of files. This mode also supports Generating a PSF or suppling your own measured PSF files. Deconvolution is currently supported on up to 10 nodes simultaneously utilising up to 40 GPUs.
+* **Job List:** Shows currently running jobs by the user by querying the SLURM queue
 
 
