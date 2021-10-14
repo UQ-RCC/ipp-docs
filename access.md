@@ -19,7 +19,7 @@ The IPP uses a number of different UQ systems which you may not have access to b
 
       c. Mount your RDM collections at QBI 
       
-      *A template for this email is available here - [Link](mailto:helpdesk@qbi.uq.edu.au?cc=microscopes@imb.uq.edu.au,h.nguyen30@uq.edu.au&subject=IPP%20%2D%20Wiener%20HPC%20and%20CVL%20access%20request&body=To%20whom%20it%20concern,%0A%0ACould%20you%20please%20provide%20me%20with%20access%20to%20Wiener%20HPC%20and%20CVL%20to%20utilise%20the%20Image%20Processing%20Portal%2E%0A%0AMy%20UQ%20username%20is%3A%0A%0AI%20will%20also%20require%20the%20following%20RDM%20collection%28s%29%20%20to%20be%20mounted%20at%20Wiener/QBI%3A%0A%2D%0A%0A%0ABest%20regards,%0A%0A%0A%0AIPP_HomePage_Generated_Email)*
+      *A template for this email is available here - [Link](mailto:microscopes@imb.uq.edu.au?&subject=IPP%20%2D%20Wiener%20HPC%20and%20CVL%20access%20request&body=To%20whom%20it%20concern,%0A%0ACould%20you%20please%20provide%20me%20with%20access%20to%20Wiener%20HPC%20and%20CVL%20to%20utilise%20the%20Image%20Processing%20Portal%2E%0A%0AMy%20UQ%20username%20is%3A%0A%0AI%20will%20also%20require%20the%20following%20RDM%20collection%28s%29%20%20to%20be%20mounted%20at%20Wiener/QBI%3A%0A%2D%0A%0A%0ABest%20regards,%0A%0A%0A%0AIPP_HomePage_Generated_Email)*
 
 ### Preferable: 
 
