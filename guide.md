@@ -196,3 +196,9 @@ Common Status Codes given by SLURM on the Jobs page will include:
 | QOSMaxCpuPerUser  	| The amount of requested CPUs has exceed your user limit. The job may run if other running jobs finish |
 
 <br><br> For more information on SLURM error codes see the full documentation [here](https://slurm.schedmd.com/squeue.html#lbAG)
+
+
+## FAQs
+
+### My CVL virtual desktop wont launch properly?
+*If you have exceeded the 10G file limit for your clusterdata folder you will not be able to launch the desktop. Use the [Files Manager](https://github.com/UQ-RCC/ipp-docs/edit/main/guide.md#files-manager) to delete/move any files that may exceed this limit. First, select the navigator option (first button) and select the folder 'clusterdata', next use the search box to filter for your username. Within your username folder, move to the 'Desktop' folder and delete anything you may have saved there.*
