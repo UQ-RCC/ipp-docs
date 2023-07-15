@@ -176,6 +176,32 @@ Image deconvolution is a computationally intensive task which can improve image 
             - Ensure the Objective Angle is set correctly (32.8) and the median background is reasonable.
             - Ensure the voxel sizes are correct and edit if necessary (for LLS it should be 0.104 for X/Y and usually 0.495 for Voxel depth)  
  
+## Macros
+
+The macros page lets you execute ijm macros against your image file(s) using the power of HPC. There are a number of generic macros already provided for you with the ability to batch execute your own macros coming soon.
+
+### Macros available now include:
+-Batch Z-projection (Flattens 3D images by Maximum, Minimum, Average etc projections)
+-Batch Image Filtering (Applies image filters such as Mean, Median & Gaussian)
+-Batch 4D Cropping (Crops to a smaller ROI)
+-Image Destacking (reduces dimensionality)
+-Thumbnail generation (image scaling)
+-Batch StarDist (uses StarDist to identify and measure nuclei)
+
+### Running a macro job
+1. Select your file or files using the standard file selection tool
+2. Choose the macro you wish to run from the dropdown menu.
+3. Read the displayed instructions and inputs for the macro (and view the code if needed)
+4. Click next and fill in the relevant fields
+5. Click next to confirm the resources required
+6. Click next to review the job
+7. Submit
+8. An email confirmation will arrive upon job completion
+
+### .ims to .tif
+The .ims to .tif file converter expects large multi-dimensional (3D time-series) .ims files (either from an Andor Dragonfly Spinning Disc Confocal or from the Imaris Visualisation program) and will output individual timepoints as a .tif file.
+
+
 
 ## Jobs Management
 When a job is submitted to the HPC it first enters the Queue which is managed by a schedular called SLURM. SLURM looks for where it can slot your job into the HPC based on your requested resources. Sometimes your job may run instantly (if you only request a small allocation of resources) however sometimes it may hit the queue and need to wait until enough requested resources are freed up and reserved for your job. The Jobs page lets you see all jobs that you have requested that are currently in the queue or running. The page refreshes every few seconds, or you can manually refresh by clicking the blue icon. Jobs can also be cancelled by selecting the appropriate checkbox that corresponds with the job being cancelled and by clicking the orange button. <br>
