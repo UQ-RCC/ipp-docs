@@ -181,14 +181,14 @@ Image deconvolution is a computationally intensive task which can improve image 
 The macros page lets you execute ijm macros against your image file(s) using the power of HPC. There are a number of generic macros already provided for you with the ability to batch execute your own macros coming soon.
 
 ### Macros available now include:
--Batch Z-projection (Flattens 3D images by Maximum, Minimum, Average etc projections)
--Batch Image Filtering (Applies image filters such as Mean, Median & Gaussian)
--Batch 4D Cropping (Crops to a smaller ROI)
--Image Destacking (reduces dimensionality)
--Thumbnail generation (image scaling)
--Batch StarDist (uses StarDist to identify and measure nuclei)
+- Batch Z-projection (Flattens 3D images by Maximum, Minimum, Average etc projections)
+- Batch Image Filtering (Applies image filters such as Mean, Median & Gaussian)
+- Batch 4D Cropping (Crops to a smaller ROI)
+- Image Destacking (reduces dimensionality)
+- Thumbnail generation (image scaling)
+- Batch StarDist (uses StarDist to identify and measure nuclei)
 
-<img src="images/Macros_LangingPage.jpg" alt="Overview of Macros Page" width="900"/><br>
+<img src="images/Macros_LandingPage.jpg" alt="Overview of Macros Page" width="900"/><br>
 
 
 ### Running a macro job
@@ -200,10 +200,6 @@ The macros page lets you execute ijm macros against your image file(s) using the
 6. Click next to review the job
 7. Submit
 8. An email confirmation will arrive upon job completion
-
-### .ims to .tif
-The .ims to .tif file converter expects large multi-dimensional (3D time-series) .ims files (either from an Andor Dragonfly Spinning Disc Confocal or from the Imaris Visualisation program) and will output individual timepoints as a .tif file.
-
 
 
 ## Jobs Management
