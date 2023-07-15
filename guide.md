@@ -188,6 +188,9 @@ The macros page lets you execute ijm macros against your image file(s) using the
 -Thumbnail generation (image scaling)
 -Batch StarDist (uses StarDist to identify and measure nuclei)
 
+<img src="images/Macros_LangingPage.jpg" alt="Overview of Macros Page" width="900"/><br>
+
+
 ### Running a macro job
 1. Select your file or files using the standard file selection tool
 2. Choose the macro you wish to run from the dropdown menu.
