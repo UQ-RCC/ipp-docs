@@ -193,15 +193,27 @@ The macros page lets you execute ijm macros against your image file(s) using the
 
 ### Running a macro job
 1. Select your file or files using the standard file selection tool
-2. Choose the macro you wish to run from the dropdown menu.
-3. Read the displayed instructions and inputs for the macro (and view the code if needed)
-4. Click next and fill in the relevant fields
-5. Click next to confirm the resources required
-6. Click next to review the job
-7. Submit
-8. An email confirmation will arrive upon job completion
+2. Select your macro scripts from the github repository or the file system. 
+3. If github is selected, choose the macro you wish to run from the dropdown menu.
+4. Read the displayed instructions and inputs for the macro (and view the code if needed)
+5. Click next and fill in the relevant fields
+6. Click next to confirm the resources required
+7. Click next to review the job
+8. Submit
+9. An email confirmation will arrive upon job completion
 
-
+### Providing paramaters on your macro script
+1. Make sure that you follow standard script parameterization as given in ImageJ documentation on [Script Paramaters](https://imagej.net/scripting/parameters). 
+2. Parameter declarations begin with universal `#@parameter` notation. Follow the rules as given in the [Basic syntax](https://imagej.net/scripting/parameters#basic-syntax) section.
+3. Each script should include `two mandatory` parameters in order to provide input and output folders to the image files. Values for these two parameters are autopopulated.  
+    Please add the following two parameters to your script.
+    - __#@ String input__
+    - __#@ String output__
+4. You can add multiple choice paramaters as follows. Make sure to give `style property` to distinguish dropdown lists and radio buttons.
+    - __#@ String (choices={"Option 1", "Option 2"}, style="listBox") optionList__
+    - __#@ String (choices={"Option 1", "Option 2"}, style="radioButtonHorizontal") options__
+5. You can add default values to the script paramaters as follows.
+    - __#@ String (value="value1") someValue__
 ## Jobs Management
 When a job is submitted to the HPC it first enters the Queue which is managed by a schedular called SLURM. SLURM looks for where it can slot your job into the HPC based on your requested resources. Sometimes your job may run instantly (if you only request a small allocation of resources) however sometimes it may hit the queue and need to wait until enough requested resources are freed up and reserved for your job. The Jobs page lets you see all jobs that you have requested that are currently in the queue or running. The page refreshes every few seconds, or you can manually refresh by clicking the blue icon. Jobs can also be cancelled by selecting the appropriate checkbox that corresponds with the job being cancelled and by clicking the orange button. <br>
 <img src="images/Jobs_running.png" alt="Overview of Jobs page" width="900"/><br>
