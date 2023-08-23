@@ -203,8 +203,8 @@ The macros page lets you execute ijm macros against your image file(s) using the
 9. An email confirmation will arrive upon job completion
 
 ### Providing paramaters on your macro script
-1. Make sure that you follow standard script parameterization as given in ImageJ documentation on [Script Paramaters](https://imagej.net/scripting/parameters). 
-2. Parameter declarations begin with universal `#@parameter` notation. Follow the rules as given in the [Basic syntax](https://imagej.net/scripting/parameters#basic-syntax) section.
+1. Make sure to follow standard script parameterization as given in ImageJ documentation on [Script Paramaters](https://imagej.net/scripting/parameters). 
+2. Parameter declaration begins with universal `#@parameter` notation. Follow the rules as given in the [Basic syntax](https://imagej.net/scripting/parameters#basic-syntax) section.
 3. Each script should include `two mandatory` parameters in order to provide input and output folders to the image files. Values for these two parameters are autopopulated.  
     Please add the following two parameters to your script.
     - __#@ String input__
