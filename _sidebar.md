@@ -1,4 +1,6 @@
 * [Introduction](/)
 * [Request Access](access.md)
 * [User Guide](guide.md)
+* [Technical Guide](technicalguide.md)
 * [Installation](installation.md)
+* [Contact Us](contact.md)

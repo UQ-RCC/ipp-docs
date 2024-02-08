@@ -176,7 +176,44 @@ Image deconvolution is a computationally intensive task which can improve image 
             - Ensure the Objective Angle is set correctly (32.8) and the median background is reasonable.
             - Ensure the voxel sizes are correct and edit if necessary (for LLS it should be 0.104 for X/Y and usually 0.495 for Voxel depth)  
  
+## Macros
 
+The macros page lets you execute ijm macros against your image file(s) using the power of HPC. There are a number of generic macros already provided for you with the ability to batch execute your own macros coming soon.
+
+### Macros available now include:
+- Batch Z-projection (Flattens 3D images by Maximum, Minimum, Average etc projections)
+- Batch Image Filtering (Applies image filters such as Mean, Median & Gaussian)
+- Batch 4D Cropping (Crops to a smaller ROI)
+- Image Destacking (reduces dimensionality)
+- Thumbnail generation (image scaling)
+- Batch StarDist (uses StarDist to identify and measure nuclei)
+
+<img src="images/Macros_LandingPage.jpg" alt="Overview of Macros Page" width="900"/><br>
+
+
+### Running a macro job
+1. Select your file or files using the standard file selection tool
+2. Select your macro scripts from the github repository or the file system. 
+3. If github is selected, choose the macro you wish to run from the dropdown menu.
+4. Read the displayed instructions and inputs for the macro (and view the code if needed)
+5. Click next and fill in the relevant fields
+6. Click next to confirm the resources required
+7. Click next to review the job
+8. Submit
+9. An email confirmation will arrive upon job completion
+
+### Providing paramaters on your macro script
+1. Make sure to follow standard script parameterization as given in ImageJ documentation on [Script Paramaters](https://imagej.net/scripting/parameters). 
+2. Parameter declaration begins with universal `#@parameter` notation. Follow the rules as given in the [Basic syntax](https://imagej.net/scripting/parameters#basic-syntax) section.
+3. Each script should include `two mandatory` parameters in order to provide input and output folders to the image files. Values for these two parameters are autopopulated.  
+    Please add the following two parameters to your script.
+    - __#@ String input__
+    - __#@ String output__
+4. You can add multiple choice paramaters as follows. Make sure to give `style property` to distinguish dropdown lists and radio buttons.
+    - __#@ String (choices={"Option 1", "Option 2"}, style="listBox") optionList__
+    - __#@ String (choices={"Option 1", "Option 2"}, style="radioButtonHorizontal") options__
+5. You can add default values to the script paramaters as follows.
+    - __#@ String (value="value1") someValue__
 ## Jobs Management
 When a job is submitted to the HPC it first enters the Queue which is managed by a schedular called SLURM. SLURM looks for where it can slot your job into the HPC based on your requested resources. Sometimes your job may run instantly (if you only request a small allocation of resources) however sometimes it may hit the queue and need to wait until enough requested resources are freed up and reserved for your job. The Jobs page lets you see all jobs that you have requested that are currently in the queue or running. The page refreshes every few seconds, or you can manually refresh by clicking the blue icon. Jobs can also be cancelled by selecting the appropriate checkbox that corresponds with the job being cancelled and by clicking the orange button. <br>
 <img src="images/Jobs_running.png" alt="Overview of Jobs page" width="900"/><br>
@@ -196,3 +233,9 @@ Common Status Codes given by SLURM on the Jobs page will include:
 | QOSMaxCpuPerUser  	| The amount of requested CPUs has exceed your user limit. The job may run if other running jobs finish |
 
 <br><br> For more information on SLURM error codes see the full documentation [here](https://slurm.schedmd.com/squeue.html#lbAG)
+
+
+## FAQs
+
+### My CVL virtual desktop wont launch properly?
+*If you have exceeded the 10G file limit for your clusterdata folder you will not be able to launch the desktop. This can happen if you have saved too much data to your desktop, instead of the scratch drives (which you will typically have 2T of space. <br><br> Use the [Files Manager](https://github.com/UQ-RCC/ipp-docs/edit/main/guide.md#files-manager) to delete/move any files that may exceed this limit. First, select the navigator option (first button) and select the folder 'clusterdata', next use the search box to filter for your username. Within your username folder, move to the 'Desktop' folder and delete anything you may have saved there.*
