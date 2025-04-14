@@ -69,15 +69,17 @@ There are 3 Directory Groups:
  </ul>
 <br>
 
-### Visualising your image files on CVL
-The Characterisation Virtual Laboratory (CVL) platform is an Linux based virtual dekstop that can be run within your browser, populated with open-source software tools such as Fiji and Napari. For more information on how to access CVL please see the following [Guide](https://characterisation-virtual-laboratory.github.io/CVL_Community/CVLWiener/)
+### Visualising your image files on onBunya
 
-Selecting the file from within the Files Manger page will allow you to then click the Launch Virtual Desktop button in the top right toolbar. Here you can spin up a CVL instance and launch the selected image file into either Napari or Fiji. Note you can edit the resources allocated to your CVL session upto a limit of (1xNode, 4xProcessors(cores), 32GB Memory (per processor)).
+OnBunya is a web portal that provides users to access Bunya virtual dekstop. It can be accessible by all Bunya users, providing researchers with an easily accessible graphical user interface (GUI) and remote web access to the powerful hardware Bunya has to offer. 
+For more information on how to access onBunya please see the following [Guide](https://github.com/UQ-RCC/hpc-docs/blob/main/guides/OnDemand-Guide.md)
+
+Selecting a file from the Files Manager page enables you to click the Launch Virtual Desktop button in the top-right toolbar. From there, you can spin up an onBunya instance and open the selected image file in Fiji, Napari, or CellProfiler. You can also choose a desktop configuration with the required CPU and memory resources, and specify how many hours the session should run.
 
 ## Desktops Manager
-The desktops manager page lets you create a CVL desktop environment, or if you already have one available you can click Show Desktop to create a new tab with the CVL session running. You can also kill a desktop session by clicking the trash can icon.<br>
- <img src="images/Desktops Manager_CreateDesktop.png" alt="Overview of Desktops Manager Page - No Currently Running Dekstop" width="900"/><br>
- <img src="images/Desktops Manager_DesktopRunning.png" alt="Overview of Desktops Manager Page - Currently Running Dekstop" width="900"/><br>
+The Desktops Manager page allows you to select an onBunya desktop, after which you'll be directed to a form where you can specify the resources required to launch the desktop<br>
+ <img src="images/Desktop Manager_Launch_Desktop" alt="Overview of Desktops Manager Page - No Currently Running Dekstop" width="900"/><br>
+ <img src="images/onBunya_desktop_configuration_form" alt="Desktop resource configuration page" width="900"/><br>
 
 
 ## Converter
@@ -214,11 +216,12 @@ The macros page lets you execute ijm macros against your image file(s) using the
     - __#@ String (choices={"Option 1", "Option 2"}, style="radioButtonHorizontal") options__
 5. You can add default values to the script paramaters as follows.
     - __#@ String (value="value1") someValue__
+
 ## Jobs Management
 When a job is submitted to the HPC it first enters the Queue which is managed by a schedular called SLURM. SLURM looks for where it can slot your job into the HPC based on your requested resources. Sometimes your job may run instantly (if you only request a small allocation of resources) however sometimes it may hit the queue and need to wait until enough requested resources are freed up and reserved for your job. The Jobs page lets you see all jobs that you have requested that are currently in the queue or running. The page refreshes every few seconds, or you can manually refresh by clicking the blue icon. Jobs can also be cancelled by selecting the appropriate checkbox that corresponds with the job being cancelled and by clicking the orange button. <br>
 <img src="images/Jobs_running.png" alt="Overview of Jobs page" width="900"/><br>
 
-Note that any job running on Wiener against your UQ username will be visible in this list. Jobs submitted via the Image Processing Portal will be prefixed with ipp_ . Characterisation Virtual Laboratories (Linux virtual desktops) will have the *Jobname* cvl and are currently limited to 1 cvl session per user.
+Note that any job running on Bunya against your UQ username will be visible in this list. Jobs submitted via the Image Processing Portal will be prefixed with ipp_ . 
 
 Common Status Codes given by SLURM on the Jobs page will include:
 | **Status**   	| **Explanation**   	|
